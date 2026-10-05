@@ -1,0 +1,16 @@
+import { SystemItem } from '@/core/models/system.model';
+
+const permissions = (...items: Array<[string, string, string]>) => items.map(([id, name, description]) => ({ id, name, description }));
+
+export const SYSTEMS: SystemItem[] = [
+  { id: 'ponto-eletronico', name: 'Ponto Eletrônico', shortName: 'Ponto', description: 'Controle de frequência', icon: 'clock', permissions: permissions(['usuario', 'Usuário', 'Consulta e registro'], ['fiscal', 'Fiscal', 'Auditoria de registros'], ['gestor', 'Gestor', 'Gestão de equipes'], ['administrador', 'Administrador', 'Acesso completo']) },
+  { id: 'sgi-dom', name: 'Sgi Dom', shortName: 'DOM', description: 'Diário oficial municipal', icon: 'file-text', permissions: permissions(['consulta', 'Consulta', 'Leitura de publicações'], ['editor', 'Editor', 'Criação e edição'], ['gestor', 'Gestor', 'Gestão de publicações']) },
+  { id: 'sgi-protocolo', name: 'Sgi Protocolo', shortName: 'Protocolo', description: 'Processos e protocolos', icon: 'folder-open', permissions: permissions(['atendente', 'Atendente', 'Entrada de protocolos'], ['analista', 'Analista', 'Tramitação e análise'], ['gestor', 'Gestor', 'Gestão do setor']) },
+  { id: 'sgi-almoxarifado', name: 'Sgi Almoxarifado', shortName: 'Almoxarifado', description: 'Materiais e estoque', icon: 'package', permissions: permissions(['consulta', 'Consulta', 'Visualização do estoque'], ['operador', 'Operador', 'Movimentação de estoque'], ['gestor', 'Gestor', 'Gestão de estoque']) },
+  { id: 'sis-atendimento', name: 'Sis Atendimento', shortName: 'Atendimento', description: 'Atendimento ao cidadão', icon: 'users', permissions: permissions(['atendente', 'Atendente', 'Atendimento e cadastro'], ['supervisor', 'Supervisor', 'Supervisão da equipe'], ['gestor', 'Gestor', 'Gestão do atendimento']) },
+  { id: 'estatisticas-transito', name: 'Estatísticas de Trânsito', shortName: 'Trânsito', description: 'Indicadores e estatísticas', icon: 'chart-column', permissions: permissions(['consulta', 'Consulta', 'Visualização de indicadores'], ['analista', 'Analista', 'Análise de dados'], ['gestor', 'Gestor', 'Gestão de indicadores']) },
+  { id: 'fala-cidadao', name: 'Fala Cidadão', shortName: 'Fala Cidadão', description: 'Solicitações e manifestações', icon: 'message-square', permissions: permissions(['consulta', 'Consulta', 'Visualização'], ['atendente', 'Atendente', 'Tratamento de solicitações'], ['gestor', 'Gestor', 'Gestão de manifestações']) },
+  { id: 'sistema-gestor-a', name: 'Sistema gestor A', shortName: 'Gestor A', description: 'Gestão administrativa', icon: 'settings', permissions: permissions(['consulta', 'Consulta', 'Leitura'], ['operador', 'Operador', 'Operação do sistema'], ['gestor', 'Gestor', 'Gestão completa']) },
+  { id: 'sistema-gestor-b', name: 'Sistema gestor B', shortName: 'Gestor B', description: 'Gestão operacional', icon: 'settings', permissions: permissions(['consulta', 'Consulta', 'Leitura'], ['operador', 'Operador', 'Operação do sistema'], ['gestor', 'Gestor', 'Gestão completa']) },
+  { id: 'sistema-gestor-c', name: 'Sistema gestor C', shortName: 'Gestor C', description: 'Gestão de serviços', icon: 'settings', permissions: permissions(['consulta', 'Consulta', 'Leitura'], ['operador', 'Operador', 'Operação do sistema'], ['gestor', 'Gestor', 'Gestão completa']) }
+];
